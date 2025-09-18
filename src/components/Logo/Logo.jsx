@@ -5,7 +5,7 @@ import './logo.css'
 export default function Logo() {
   return (
     // Change <a> to be Link to route /home later
-    <a className='header-logo-container' href='#'>
+    <a className='header-logo-container' href='#Home'>
         <img className='header-logo' src={logo} alt='logotype'/>
     </a>
   )

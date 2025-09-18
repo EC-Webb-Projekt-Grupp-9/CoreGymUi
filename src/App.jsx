@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
     return (
@@ -101,13 +102,13 @@ function App() {
                     </div>
                 </div>
             </section>
-
+                <Footer /> 
             {/* Footer */}
-            <footer className="footer bg-primary text-white text-center py-3">
+            {/* <footer className="footer bg-primary text-white text-center py-3">
                 <div className="container">
                     <p className="mb-0">© 2025 Core Gym Club AB. All rights reserved.</p>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     );
 }

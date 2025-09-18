@@ -1,0 +1,10 @@
+header {
+    position: fixed;
+    top: 0;
+    background-color: #2B2D4240;
+
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
+}

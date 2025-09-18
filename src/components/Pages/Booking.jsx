@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import PageTitle from "../components/PageTitle";
 
 const Booking = () => {
   return (
-    <div className="container">
+    <PageTitle title="Booking">
+      <p>Välkommen till bokningsidan!</p>
+    </PageTitle>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Booking
+export default Booking;

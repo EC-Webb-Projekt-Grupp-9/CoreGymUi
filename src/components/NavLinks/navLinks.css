@@ -1,0 +1,19 @@
+.nav-box {
+ display: flex;
+ align-items: center;
+ gap: 2rem;
+}
+
+.nav-links {
+   text-decoration: none;
+   color: white;
+   font-size: 1.2rem;
+   font-weight: 200;
+   
+    &:hover {
+        color: var(--primary-lighter);
+    }
+    &:active {
+        color: var(--primary-light);
+    }
+}

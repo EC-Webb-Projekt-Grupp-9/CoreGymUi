@@ -1,0 +1,12 @@
+.info-section{
+    display: flex;
+    flex-direction: row;
+}
+.gym-info{
+    width: 42.5rem;
+    height: 14rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 11.5rem;
+    margin-left: 5rem;
+}

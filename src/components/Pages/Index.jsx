@@ -1,7 +1,12 @@
 import React from 'react'
+import './Index.css'
+import InfoSection from '../InfoSection/InfoSection'
 
-export default function Index() {
+const Index = () => {
   return (
-    <div>Index</div>
+    <section className="startsida-container">
+      <InfoSection />
+    </section>
   )
 }
+export default Index

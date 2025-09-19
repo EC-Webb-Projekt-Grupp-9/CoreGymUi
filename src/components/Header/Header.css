@@ -5,7 +5,24 @@ header {
 
     width: 100%;
     display:flex;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
     padding-inline: 3rem;
     gap: 3rem;
+
+    .navlinks {
+   display: none;   
 }
+
+@media (width > 768px) {
+    .navlinks {
+        display: block;
+    }
+    .hamburger {
+        display: none;
+    }
+    
+    justify-content: left;
+}
+}
+

@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header/Header';
 import Booking from './components/Pages/Booking'
-import Index from './components/Pages/Index';
 import InfoSection from './components/InfoSection/InfoSection';
 import ContactSection from './components/Contact/ContactSection';
 

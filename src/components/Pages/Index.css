@@ -4,3 +4,21 @@
     background-color: #F2F2F2;
     margin: 0 auto;
 }
+
+@media (max-width: 1280px) {
+    .startsida-container{
+        width: 100%;
+        height: 100dvh;
+        background-color: #F2F2F2;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .startsida-container{
+        width: 100%;
+        height: 100dvh;
+        background-color: #F2F2F2;
+        margin: 0 auto;
+    }
+}

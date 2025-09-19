@@ -1,11 +1,13 @@
 import React from "react";
 import PageTitle from "./PageTitle";
 
+
 const Booking = () => {
   return (
-    <PageTitle title="Booking">
-      <p>Välkommen till bokningsidan!</p>
-    </PageTitle>
+    <h1>Hello</h1>
+    // <PageTitle title="Booking">
+    //   <p>Välkommen till bokningsidan!</p>
+    // </PageTitle>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PageTitle from "../Pages/PageTitle.jsx";
 
 const Booking = () => {
   return (

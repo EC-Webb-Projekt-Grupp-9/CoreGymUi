@@ -6,7 +6,7 @@ const InfoSection = () => {
   return (
     <div className="info-section">
         <div className="info-left-side">
-            <img src={InfoImage} alt="InfoImage" />
+            <img className="info-image" src={InfoImage} alt="InfoImage" />
         </div>
         <div className="info-right-side">
             <div className="gym-info">

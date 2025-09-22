@@ -1,0 +1,70 @@
+/* Hero Section Styles */
+.hero-section {
+    height: 250px; /* Öka höjden för att täcka header också */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center and extend to full width */
+    margin-top: -76px; /* Dra upp så den går bakom header */
+    padding-top: 76px; /* Padding så texten inte hamnar bakom header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero-title {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .hero-section {
+        height: 220px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 200px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.3rem;
+    }
+}

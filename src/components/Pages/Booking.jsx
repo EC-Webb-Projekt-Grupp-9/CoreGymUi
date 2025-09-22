@@ -35,6 +35,7 @@ const Booking = () => {
     const dateObjects = dates.map(d => new Date(d))
 
 
+
   return (
     <section className="page-container">
     <Hero

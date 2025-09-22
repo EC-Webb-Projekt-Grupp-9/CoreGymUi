@@ -8,7 +8,7 @@ import gymTraining from '../../assets/images/gymtraining.svg'
 
 const Index = () => {
     return (
-        <section className="startsida-container">
+        <section className="startsida-container page-container">
             <Hero
                 title="Välkommen till Core Gym Club"
                 backgroundImage={gymTraining}

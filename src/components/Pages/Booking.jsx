@@ -36,13 +36,13 @@ const Booking = () => {
 
 
   return (
-    <>
-    <h1>Hello</h1>
-    <Calendar pickedDateChanged={handlePickDate} dateObjects={dateObjects}/>
+    <section className="page-container">
     <Hero
       title="Boka Pass"
       backgroundImage={gymTraining}
-    />
+    />  
+    <Calendar pickedDateChanged={handlePickDate} dateObjects={dateObjects}/>
+    
     <div className="container my-5">
         <div className="row">
             <div className="col-12">
@@ -51,7 +51,7 @@ const Booking = () => {
             </div>
         </div>
     </div>
-    </>
+    </section>
   )
 }
 

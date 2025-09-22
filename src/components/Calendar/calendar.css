@@ -1,0 +1,25 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    .day {
+        box-shadow: var(--card-box-drop-shadow);
+        padding: 0.5rem 2rem;
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .month {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .picked {
+        background-color: var(--primary-light);
+    }
+}
+

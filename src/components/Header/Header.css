@@ -1,17 +1,22 @@
 header {
     position: fixed;
     top: 0;
-    background-color: #2B2D4240;
-
+    background-color: rgba(43, 45, 66, 0.05); /* Mycket mer genomskinlig */
+    backdrop-filter: blur(5px); /* Mindre blur för mer genomskinlighet */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding-inline: 3rem;
     gap: 3rem;
+    z-index: 1000; /* Säkerställ att header är över hero */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    min-height: 76px; /* Säkerställ konstant höjd */
+}
 
-    .navlinks {
-   display: none;   
+.navlinks {
+    display: none;
 }
 
 @media (width > 768px) {
@@ -21,8 +26,28 @@ header {
     .hamburger {
         display: none;
     }
-    
-    justify-content: left;
-}
+
+    header {
+        justify-content: left;
+    }
 }
 
+/* Extra genomskinlig när man scrollar ner */
+header.scrolled {
+    background-color: rgba(43, 45, 66, 0.15);
+}
+
+/* Fixa för navbar collapse på mobil */
+.navbar-collapse {
+    background-color: rgba(43, 45, 66, 0.9);
+    border-radius: 8px;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+/* Responsive justeringar */
+@media (max-width: 768px) {
+    header {
+        padding-inline: 1.5rem;
+    }
+}

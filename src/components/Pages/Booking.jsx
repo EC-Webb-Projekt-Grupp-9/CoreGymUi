@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PageTitle from "./PageTitle";
 import Calendar from "../Calendar/Calendar";
-
+import gymTraining from '../../assets/images/gymtraining.svg'
+import Hero from '../Hero/Hero'
 
 const Booking = () => {
   const [sessions, setSessions] = useState([])
@@ -36,16 +37,22 @@ const Booking = () => {
 
   return (
     <>
-    
     <h1>Hello</h1>
     <Calendar pickedDateChanged={handlePickDate} dateObjects={dateObjects}/>
-    
+    <Hero
+      title="Boka Pass"
+      backgroundImage={gymTraining}
+    />
+    <div className="container my-5">
+        <div className="row">
+            <div className="col-12">
+                <h2>Bokningsformulär kommer här</h2>
+                <p>Här kommer bokningsfunktionaliteten att implementeras.</p>
+            </div>
+        </div>
+    </div>
     </>
-    
-    // <PageTitle title="Booking">
-    //   <p>Välkommen till bokningsidan!</p>
-    // </PageTitle>
-  );
+
 };
 
 export default Booking;

@@ -52,7 +52,7 @@ const Booking = () => {
         </div>
     </div>
     </>
-
-};
+  )
+}
 
 export default Booking;

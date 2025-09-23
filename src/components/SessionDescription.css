@@ -2,7 +2,7 @@
     display: flex;
     width: 65%;
     height: 154px;
-    background-color: #D0DDDC;
+    background-color: var(--primary-light);
     justify-content: space-between;
     margin-top: 1rem;
     border-radius: 8px;
@@ -19,7 +19,7 @@
 }
 
 .card-contact-info{
-    background-color: #F2F2F2;
+    background-color: var(--contact-background-clr);
     width: 20%;
     height: 123px;
     padding: 1rem;

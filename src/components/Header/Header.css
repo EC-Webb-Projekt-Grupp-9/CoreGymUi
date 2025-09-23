@@ -1,7 +1,7 @@
 header {
     position: fixed;
     top: 0;
-    background-color: rgba(43, 45, 66, 0.05); /* Mycket mer genomskinlig */
+    background-color: rgba(43, 45, 66, 0.38); /* Mycket mer genomskinlig */
     backdrop-filter: blur(5px); /* Mindre blur för mer genomskinlighet */
     -webkit-backdrop-filter: blur(5px); /* Safari support */
     width: 100%;

@@ -22,5 +22,10 @@
     .picked {
         background-color: var(--primary-light);
     }
+
+    .today {
+        background-color: var(--primary-color);
+        color: var(--clr-text-white);
+    }
 }
 

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PageTitle from "./PageTitle";
+import {isSameDate} from '../../helpers/DateFunctions'
 import Calendar from "../Calendar/Calendar";
 import gymTraining from '../../assets/images/gymtraining.svg'
 import Hero from '../Hero/Hero'
+import BookingCard from "../BookingCard";
 
 const Booking = () => {
   const [sessions, setSessions] = useState([])
@@ -22,17 +24,12 @@ const Booking = () => {
     setCurrentPickedDay(date)
   }
 
-  const dates = [
-        "2025-09-22T18:00:00.000Z",
-        "2025-09-23T18:00:00.000Z",
-        "2025-09-24T18:00:00.000Z",
-        "2025-09-25T18:00:00.000Z",
-        "2025-09-26T18:00:00.000Z",
-        "2025-09-27T18:00:00.000Z",
-        "2025-09-28T18:00:00.000Z"
-    ]
+  const dateObjects = sessions
+  .map(session => new Date(session.startTime))
+  .filter((date, index, arr) => 
+      arr.findIndex(d => d.toDateString() === date.toDateString()) === index
+  )
 
-    const dateObjects = dates.map(d => new Date(d))
 
 
   return (
@@ -42,6 +39,18 @@ const Booking = () => {
       backgroundImage={gymTraining}
     />  
     <Calendar pickedDateChanged={handlePickDate} dateObjects={dateObjects}/>
+
+    <div>
+      {currentPickedDay ? (
+        sessions
+          .filter(session => isSameDate(new Date(session.startTime), currentPickedDay))
+          .map(session => (
+            <BookingCard  session = {session} />
+          ))
+      ) : (
+        <p></p>
+      )}
+    </div>
     
     <div className="container my-5">
         <div className="row">

@@ -12,6 +12,9 @@
     --main-background-clr: #F9F9F9;
     --content-background-clr: #F2F2F2;
     --card-box-drop-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
+    --contact-background-clr: white;
+    --divider-clr: #dfdfde;
+    --times-clr: #2d7d79;
 }
 
 * {

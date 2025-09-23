@@ -7,6 +7,7 @@
     -webkit-overflow-scrolling: touch; /* Smooth scrolling på iOS */
 
     .day {
+        background-color: var(--primary-lighter);
         box-shadow: var(--card-box-drop-shadow);
         padding: 0.5rem 2rem;
         border-radius: 8px;

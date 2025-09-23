@@ -1,8 +1,12 @@
-.booking-card {
-    width: 90%;
-    max-width: 800px;
-    background-color: #D0DDDC;
-    border-radius: 12px;
+
+.booking-card{
+    width: 65%;
+    height: 105px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--primary-light);
+    align-items: center;
     margin: 1rem auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;

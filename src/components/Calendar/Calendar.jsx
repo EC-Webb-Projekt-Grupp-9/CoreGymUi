@@ -3,51 +3,29 @@ import './calendar.css'
 
 export default function Calendar({pickedDateChanged, dateObjects}) {
     const [pickedDay, setPickedDay] = useState("")
-    const [today, setToday] = useState("")
-    const [isMobile, setIsMobile] = useState(false)
-    // const [displayDates, setDisplayDates] = useState([])
+    const [today, setToday] = useState(new Date())
+    const [isMobile, setIsMobile] = useState(false)   
     const [startDate, setStartDate] = useState(new Date())
 
-    useEffect( () => {
-        getTodaysDate()
-        checkScreenSize()
-        // setDisplayDates(isMobile ? dateObjects.filter(date => date.getDate() >= today.getDate()).slice(0, 3) : dateObjects.filter(date => date.getDate() >= today.getDate()).slice(0,7))         
-
-        // Lyssna på fönsterstorlek ändringar
-        const handleResize = () => {
-            checkScreenSize()
-        }
-
-        window.addEventListener('resize', handleResize)        
-        return () => window.removeEventListener('resize', handleResize)
+    useEffect( () => {        
+        checkScreenSize()     
+        
+        window.addEventListener('resize', checkScreenSize)        
+        return () => window.removeEventListener('resize', checkScreenSize)
        
-    }, [dateObjects, isMobile])
+    }, [])
 
     function checkScreenSize() {
         setIsMobile(window.innerWidth <= 768)
     }
-
-    // function showNextPeriod() {    
-    //     const currentStartDate = new Date(today)
-    //     currentStartDate.setDate(today.getDate() + 6)    
-    //     setDisplayDates(isMobile 
-    //         ? dateObjects.filter(date => date.getDate() >= today.getDate()).slice(0, 3) 
-    //         : dateObjects.filter(date => date >= currentStartDate).slice(0,7))        
-              
-    //     console.log(currentStartDate)
-    //     console.log(displayDates)
-    // }
+  
 
 
     function handlePickDay(date) {
         pickedDateChanged(date)
         setPickedDay(date)
     }
-
-    function getTodaysDate() {
-        const today = new Date()
-        setToday(today)        
-    }
+    
 
 
     function isSameDate(date1, date2) {

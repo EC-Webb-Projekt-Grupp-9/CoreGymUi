@@ -1,10 +1,22 @@
 .calendar-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding: 2rem 1rem;
     overflow-x: auto; /* Lägg till scroll på mobil om behövs */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling på iOS */
+
+    i {
+        font-size: 1.7rem;
+        cursor: pointer;
+        transition: all 0.3s ease;        
+
+       }
+
+       i:hover { 
+              transform: translateY(-2px);
+       }
 
     .day {
         background-color: var(--primary-lighter);
@@ -17,7 +29,7 @@
         cursor: pointer;
         transition: all 0.3s ease;
         min-width: 120px; /* Säkerställ minsta bredd */
-        text-align: center;
+        text-align: left;
     }
 
     .day:hover {
@@ -28,7 +40,7 @@
     .month {
         display: flex;
         gap: 0.5rem;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
     }
 
@@ -59,10 +71,8 @@
 
 /* Mobil responsivt */
 @media (max-width: 768px) {
-    .calendar-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 kolumner per rad */
-        gap: 0.5rem;
+    .calendar-container {      
+        gap: 1rem;
         padding: 1rem 0.5rem;
         justify-items: center;
 
@@ -87,11 +97,9 @@
 /* Extra små skärmar */
 @media (max-width: 480px) {
     .calendar-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Fortsätt med 3 kolumner */
         gap: 0.4rem;
         padding: 1rem 0.25rem;
-        justify-items: center;
+        justify-items: left;
 
         .day {
             padding: 0.25rem 0.4rem;

@@ -5,10 +5,13 @@ import Calendar from "../Calendar/Calendar";
 import gymTraining from '../../assets/images/gymtraining.svg'
 import Hero from '../Hero/Hero'
 import BookingCard from "../BookingCard";
+import SessionDescription from "../SessionDescription";
 
 const Booking = () => {
   const [sessions, setSessions] = useState([])
   const [currentPickedDay, setCurrentPickedDay] = useState("")
+  const [selectedSessionId, setSelectedSessionId] = useState(null)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect( () => {
     fetchSessions()
@@ -30,7 +33,9 @@ const Booking = () => {
       arr.findIndex(d => d.toDateString() === date.toDateString()) === index
   )
 
-
+  function handleSelect(id) {
+    setSelectedSessionId(prev => (prev === id ? null : id));
+  }
 
 
   return (
@@ -46,7 +51,17 @@ const Booking = () => {
         sessions
           .filter(session => isSameDate(new Date(session.startTime), currentPickedDay))
           .map(session => (
-            <BookingCard  session = {session} />
+            <div key={session.id}>
+              <BookingCard  
+              session = {session} 
+              onClick={() => handleSelect(session.id)} 
+              isExpanded={selectedSessionId === session.id}
+              />  
+
+              {selectedSessionId === session.id && (
+              <SessionDescription session={session}/>
+            )}
+            </div>
           ))
       ) : (
         <p></p>

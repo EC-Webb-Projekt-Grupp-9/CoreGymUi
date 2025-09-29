@@ -1,0 +1,52 @@
+.register-form {
+  background-color: #D0DDDC; 
+  padding: 30px;
+  border-radius: 8px ;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+   border: 1px solid #0C3F3F;
+}
+
+
+.register-form .btn-continue {
+  background-color: #0C3F3F;
+  color: white;
+  border: none;
+  padding: 1rem ;
+  transition: background-color 0.2s;
+  width: 50%;
+  border-radius: 16px;
+}
+
+.register-form .btn-continue:hover {
+  background-color: #0C3F3F; 
+}
+
+.register-form .btn-cancel {
+  background-color: #3F0C0D;
+  color: white;
+  border: none;
+  padding: 1rem;
+  transition: background-color 0.2s;
+   width: 50%;
+    border-radius: 16px;
+}
+
+.register-form .btn-cancel:hover {
+  background-color: #a71d2a; 
+}
+
+.d-grid.gap-2 {
+  display: grid;
+  gap: 10px; 
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-icon i {
+  color: #0C3F3F; 
+  font-size: 1.6rem; 
+}

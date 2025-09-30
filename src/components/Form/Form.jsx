@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Form.css'
 import { validateForm } from './ValidateForm'
 
-function Form({ onClose }) {
+function Form({ onClose, onSuccess }) {
 
    const [formData, setFormData] = useState({
     titel: '',
@@ -28,8 +28,14 @@ function Form({ onClose }) {
       }
 
       console.log('Formulärdata:', formData);
-      alert('Formuläret skickat! (Se konsolen för data)');
+
+      // Stäng formuläret först
       onClose && onClose();
+
+      // Visa bekräftelsemeddelande efter att formuläret stängts
+      setTimeout(() => {
+        onSuccess && onSuccess();
+      }, 100);
   };
 
     const handleChange = (e) => {

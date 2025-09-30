@@ -27,39 +27,45 @@ export default function Register() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage({ type: "", text: "" });
+  e.preventDefault();
+  setMessage({ type: "", text: "" });
 
-    const error = validate();
-    if (error) {
-      setMessage({ type: "danger", text: error });
-      return;
-    }
+  const error = validate();
+  if (error) {
+    setMessage({ type: "danger", text: error });
+    return;
+  }
 
-    setLoading(true);
-    try {
-      const res = await fetch("roger här ska det vara api om jag gjorde rätt", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          password,
-        }),
-      });
+  setLoading(true);
+  try {
+    const res = await fetch("https://localhost:7034/api/account", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword: confirm, 
+      }),
+    });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.message || "Okänt fel");
+    const data = await res.json();
+    if (!res.ok) throw new Error(data?.message || "Okänt fel");
 
-      setMessage({ type: "success", text: "Konto skapat! Du kan nu logga in." });
-      setFirstName(""); setLastName(""); setEmail(""); setPassword(""); setConfirm("");
-    } catch (err) {
-      setMessage({ type: "danger", text: err.message });
-    } finally {
-      setLoading(false);
-    }
-  };
+    setMessage({ type: "success", text: "Konto skapat! Du kan nu logga in." });
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setConfirm("");
+  } catch (err) {
+    setMessage({ type: "danger", text: err.message });
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">

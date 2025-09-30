@@ -8,6 +8,7 @@ import Index from "./components/Pages/Index";
 import Booking from "./components/Pages/Booking";
 import Register from './components/Pages/Register';
 import Login from './components/Pages/Login';
+import Admin from "./components/Pages/Admin";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/booking" element={<Booking />} />
          <Route path="/register" element={<Register />} />
              <Route path="/login" element={<Login />} />
+         <Route path="/admin" element={<Admin />} />
       </Routes>
     </main>
   );

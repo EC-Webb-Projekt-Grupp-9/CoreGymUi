@@ -7,6 +7,7 @@ export default function NavLinks() {
     <nav className='nav-box'>
         <NavLink to={"/"} className='nav-links'>Startsida</NavLink>
         <NavLink to={"/booking"} className='nav-links'>Boka Pass</NavLink>
+         <NavLink to={"/admin"} className='nav-links'>Admin sida </NavLink>
     </nav>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
-
+import { ADDRESS } from "../../assets/js/config";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -38,7 +38,7 @@ export default function Register() {
 
   setLoading(true);
   try {
-    const res = await fetch("https://localhost:7034/api/account", {
+    const res = await fetch(`${ADDRESS}/api/account`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -50,9 +50,10 @@ export default function Register() {
       }),
     });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data?.message || "Okänt fel");
-
+    if (!res.ok){
+      console.log("Registration failed");
+    }
+    
     setMessage({ type: "success", text: "Konto skapat! Du kan nu logga in." });
     setFirstName("");
     setLastName("");

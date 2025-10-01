@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Register.css"; 
 import { useNavigate } from "react-router-dom";
+import { ADDRESS } from "../../assets/js/config";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -21,9 +22,10 @@ export default function Login() {
 
     setLoading(true);
     try {
-      const res = await fetch("https://localhost:7034/api/account/login", {
+      const res = await fetch(`${ADDRESS}/api/auth/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           email,
           password,

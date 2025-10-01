@@ -1,0 +1,1 @@
+export const ADDRESS = "https://localhost:7034";

@@ -8,6 +8,7 @@ import BookingCard from "../BookingCard";
 import SessionDescription from "../SessionDescription";
 import Form from "../Form/Form";
 import ConfirmPopUp from "../Form/ConfirmPopUp";
+import ConfirmDelete from "../Dialog/ConfirmDelete";
 const Booking = () => {
   const [sessions, setSessions] = useState([])
   const [currentPickedDay, setCurrentPickedDay] = useState("")
@@ -30,7 +31,7 @@ const Booking = () => {
   }
 
   async function fetchSessions() {
-    const res = await fetch("https://localhost:7072/sessions")
+    const res = await fetch("https://coregym.hajt.se/api/sessions");
     const jsonData = await res.json()
     setSessions(jsonData)
   }
@@ -53,7 +54,7 @@ const Booking = () => {
   return (
     <section className="page-container">
     <Hero
-      title="Boka Pass"
+      title="Admin"
       backgroundImage={gymTraining}
     />  
     <Calendar pickedDateChanged={handlePickDate} dateObjects={dateObjects}/>
@@ -81,7 +82,6 @@ const Booking = () => {
     </div>
 
 
-    
   {showConfirm && <ConfirmPopUp />}
   {showForm && <Form onClose={() => setShowForm(false)} onSuccess={handleFormSuccess} />}
     <button className="btn-continue" onClick={() => setShowForm(!showForm)}>

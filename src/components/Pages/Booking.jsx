@@ -18,7 +18,7 @@ const Booking = () => {
   }, [])
 
   async function fetchSessions() {
-    const res = await fetch("https://localhost:7072/sessions")
+    const res = await fetch("https://coregym.hajt.se/api/sessions");
     const jsonData = await res.json()
     setSessions(jsonData)
   }

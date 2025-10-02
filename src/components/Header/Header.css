@@ -26,10 +26,11 @@ header {
     .hamburger {
         display: none;
     }
-
+    
     header {
         justify-content: left;
     }
+
 }
 
 /* Extra genomskinlig när man scrollar ner */
@@ -50,4 +51,15 @@ header.scrolled {
     header {
         padding-inline: 1.5rem;
     }
+     .usermenu {
+          display: none;
+    }
+ 
+}
+
+.usermenu {
+    margin-left: auto; /* Skjuter elementet längst till höger */
+    display: flex; /* Om du vill ha flex inuti usermenu */
+    align-items: center; /* Vertikal centrering */
+    gap: 1rem; /* Mellan knappar/ikoner */
 }

@@ -6,6 +6,8 @@ import gymTraining from '../../assets/images/gymtraining.svg'
 import Hero from '../Hero/Hero'
 import BookingCard from "../BookingCard";
 import SessionDescription from "../SessionDescription";
+import { ADDRESS } from "../../assets/js/config";
+
 
 const Booking = () => {
   const [sessions, setSessions] = useState([])
@@ -18,7 +20,7 @@ const Booking = () => {
   }, [])
 
   async function fetchSessions() {
-    const res = await fetch("https://coregym.hajt.se/api/sessions");
+    const res = await fetch(`${ADDRESS}/api/session/`)
     const jsonData = await res.json()
     setSessions(jsonData)
   }

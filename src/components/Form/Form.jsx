@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Form.css'
 import { validateForm } from './ValidateForm'
+import { ADDRESS } from "../../assets/js/config";
 
 function Form({ onClose, onSuccess }) {
 
@@ -16,7 +17,7 @@ function Form({ onClose, onSuccess }) {
 
    const [errors, setErrors] = useState({});
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
 
       // Validera formuläret
@@ -28,6 +29,25 @@ function Form({ onClose, onSuccess }) {
       }
 
       console.log('Formulärdata:', formData);
+      const dataToSend = {
+        startTime: new Date(`${formData.datum}T${formData.tid}`).toISOString(),
+        duration: 60,
+        title: formData.titel,
+        description: formData.beskrivning,
+        trainer: formData.instruktor,
+        location: formData.plats,
+        spots: formData.antal,
+      }
+
+      const res = await fetch(`${ADDRESS}/api/session/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(dataToSend)
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data?.message || "Något gick fel");
+      console.log(data);
 
       // Stäng formuläret först
       onClose && onClose();

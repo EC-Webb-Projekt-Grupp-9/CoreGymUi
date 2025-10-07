@@ -1,0 +1,46 @@
+.account-info-box{
+    background-color: var(--primary-lighter);
+    width: 666px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--card-box-drop-shadow);
+}
+
+.account-info{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    text-align: left;
+    align-items: center;
+}
+
+.form-field{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 70%;
+    align-self: center;
+    margin-bottom: 2rem;
+}
+
+.form-input{
+    border: 1px solid var(--primary-color);
+}
+
+.form-input::placeholder{
+    color: var(--primary-color);
+    
+}
+
+.save-btn{
+    background-color: var(--primary-color);
+    font-weight: 400;
+    font-size: 24px;
+    width: 184px;
+    height: 66px;
+    margin-top: 3rem;
+    align-self: center;
+    margin-bottom: 5rem;
+}

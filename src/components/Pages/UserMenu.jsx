@@ -52,7 +52,7 @@ export default function Navbar() {
               style={{ minWidth: '150px', zIndex: 1000 }}
             >
               <div className="links">
-                <NavLink to={"/minauppgifter"} className="link">Mina Uppgifter</NavLink>
+                <NavLink to={"/accountinfo"} className="link">Mina Uppgifter</NavLink>
                 <NavLink to={"/minapass"} className="link">Mina Pass</NavLink>
               </div>
 

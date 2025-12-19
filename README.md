@@ -14,3 +14,5 @@ Här tränar vi inte kroppen – vi tränar **komponenter**, **hooks** och **agi
 
 ```bash
 npm install
+
+update readme for test-git-api-1
